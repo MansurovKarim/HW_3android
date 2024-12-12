@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }else if (operation == "/") {
                     if(b == 0){
-                        String error = "Нургазы, так нельзя!";
+                        String error = "Error";
                         textView.setText(error);
                     }else {
                         float result = a / b;
