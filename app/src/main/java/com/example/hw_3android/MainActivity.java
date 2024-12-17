@@ -1,5 +1,6 @@
 package com.example.hw_3android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -87,6 +88,11 @@ public class MainActivity extends AppCompatActivity {
                     Float.parseFloat(textView.getText().toString().replace("%", "").trim()) / 100 :
                     Float.parseFloat(textView.getText().toString().trim());
         } else if (view.getId() == R.id.btn_equal) {
+            textView.setOnClickListener(v -> {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("result", textView.getText().toString());
+                startActivity(intent);
+            });
             boolean percentOn = textView.getText().toString().contains("%");
             b = percentOn ?
                     Float.parseFloat(textView.getText().toString().replace("%", "").trim()) / 100 :
@@ -156,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         isOperationClick = true;
+
     }
 
 }
-
