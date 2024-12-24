@@ -1,6 +1,7 @@
 package com.example.hw_3android;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +19,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    private Button btn_button;
     private boolean isHeartTouched = false;
     TextView text;
     ImageButton heart;
@@ -30,6 +32,17 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main2);
+
+        Button Button = findViewById(R.id.btn_Category);
+        Button.setOnClickListener(v -> {
+
+                Intent intent =  new Intent(MainActivity2.this, MainActivity3.class);
+
+                startActivity(intent);
+            });
+
+
+
 
         heart = findViewById(R.id.heart_button);
         text = findViewById(R.id.text);
